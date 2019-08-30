@@ -8,6 +8,15 @@ pipeline:
   arm32v7:
     image: plugins/docker
     registry: no-cloud.fr
-    repo: no-cloud.fr/arm32v7/multiarch
+    repo: no-cloud.fr/arm/multiarch
     tag: latest
     dockerfile: Dockerfile.arm32v7
+  manifest:
+    image: plugins/manifest
+    settings:
+      target: no-cloud.fr/multiarch
+      template: no-cloud-fr/ARCH/multiarch
+      platforms:
+        - linux/amd64
+        - linux/arm
+
