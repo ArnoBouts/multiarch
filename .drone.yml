@@ -11,6 +11,13 @@ pipeline:
     repo: no-cloud.fr/arm/multiarch
     tag: latest
     dockerfile: Dockerfile.arm32v7
+  test:
+    image: docker:dind
+    commands:
+      - docker --config . manifest create no-cloud.fr/multiarch no-cloud.fr/arm/multiarch no-cloud.fr/amd64/multiarch
+      - docker --config . manifest annotate no-cloud.fr/multiarch no-cloud.fr/amd64/multiarch --arch amd64
+      - docker --config . manifest annotate no-cloud.fr/multiarch no-cloud.fr/arm/multiarch --arch arm
+      - docker --config . manifest push no-cloud.fr/multiarch
   manifest:
     image: plugins/manifest
     username: osef
