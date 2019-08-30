@@ -1,13 +1,13 @@
 pipeline:
-  arm32v7:
-    image: plugins/docker
-    registry: no-cloud.fr
-    repo: no-cloud.fr/arm32v7/multiarch
-    tag: latest
-    dockerfile: Dockerfile.arm32v7
   amd64:
     image: plugins/docker
     registry: no-cloud.fr
     repo: no-cloud.fr/amd64/multiarch
     tag: latest
     dockerfile: Dockerfile.amd64
+  arm32v7:
+    image: plugins/docker
+    registry: no-cloud.fr
+    repo: no-cloud.fr/arm32v7/multiarch
+    tag: latest
+    dockerfile: Dockerfile.arm32v7
