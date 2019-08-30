@@ -1,5 +1,7 @@
 FROM amd64/node
 
+RUN apt-get update && apt-get install --no-recommends --yes git
+
 COPY app.js /app.js
 
 CMD ["node", "app.js"]
