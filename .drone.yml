@@ -13,10 +13,11 @@ pipeline:
     dockerfile: Dockerfile.arm32v7
   manifest:
     image: plugins/manifest
-    settings:
-      target: no-cloud.fr/multiarch
-      template: no-cloud-fr/ARCH/multiarch
-      platforms:
-        - linux/amd64
-        - linux/arm
+    username: osef
+    password: osef
+    target: no-cloud.fr/multiarch
+    template: no-cloud-fr/ARCH/multiarch
+    platforms:
+      - linux/amd64
+      - linux/arm
 
