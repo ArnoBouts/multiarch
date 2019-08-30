@@ -1,0 +1,5 @@
+FROM arm32v7/node
+
+COPY app.js /app.js
+
+CMD ["node", "app.js"]
